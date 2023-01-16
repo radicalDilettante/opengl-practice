@@ -6,6 +6,12 @@ enable_testing()
 
 add_executable(opengl-practice
     main.cpp
+    Window.h
+    Window.cpp
+    Shader.h
+    Shader.cpp
+    Mesh.h
+    Mesh.cpp
 )
 
 
@@ -22,8 +28,8 @@ target_link_libraries(${PROJECT_NAME}
 add_custom_command(
         TARGET ${PROJECT_NAME} PRE_BUILD
         COMMAND ${CMAKE_COMMAND} -E create_symlink
-                ${CMAKE_SOURCE_DIR}/shader
-                ${CMAKE_CURRENT_BINARY_DIR}/shader)
+                ${CMAKE_SOURCE_DIR}/Shaders
+                ${CMAKE_CURRENT_BINARY_DIR}/Shaders)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
