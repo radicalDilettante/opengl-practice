@@ -14,8 +14,6 @@
 #include "Mesh.h"
 #include "Shader.h"
 
-const float toRadians = 3.14159265f / 180.0f;
-
 Window mainWindow;
 std::vector<Mesh*> meshList;
 std::vector<Shader> shaderList;
