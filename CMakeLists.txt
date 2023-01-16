@@ -12,6 +12,8 @@ add_executable(opengl-practice
     Shader.cpp
     Mesh.h
     Mesh.cpp
+    Camera.h
+    Camera.cpp
 )
 
 
