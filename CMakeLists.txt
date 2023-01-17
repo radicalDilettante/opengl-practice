@@ -14,6 +14,9 @@ add_executable(opengl-practice
     Mesh.cpp
     Camera.h
     Camera.cpp
+    Texture.h
+    Texture.cpp
+    stb_image.h
 )
 
 
@@ -32,6 +35,12 @@ add_custom_command(
         COMMAND ${CMAKE_COMMAND} -E create_symlink
                 ${CMAKE_SOURCE_DIR}/Shaders
                 ${CMAKE_CURRENT_BINARY_DIR}/Shaders)
+
+add_custom_command(
+        TARGET ${PROJECT_NAME} PRE_BUILD
+        COMMAND ${CMAKE_COMMAND} -E create_symlink
+                ${CMAKE_SOURCE_DIR}/Textures
+                ${CMAKE_CURRENT_BINARY_DIR}/Textures)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
