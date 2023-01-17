@@ -16,6 +16,8 @@ add_executable(opengl-practice
     Camera.cpp
     Texture.h
     Texture.cpp
+    Light.h
+    Light.cpp
     stb_image.h
 )
 
