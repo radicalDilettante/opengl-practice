@@ -16,7 +16,7 @@ Camera::Camera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLf
     update();
 }
 
-void Camera::KeyControl(bool *keys, GLfloat deltaTime)
+void Camera::keyControl(bool *keys, GLfloat deltaTime)
 {
     GLfloat velocity = moveSpeed * deltaTime;
 
@@ -41,7 +41,7 @@ void Camera::KeyControl(bool *keys, GLfloat deltaTime)
     }
 }
 
-void Camera::MouseControl(GLfloat xChange, GLfloat yChange)
+void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 {
     xChange *= turnSpeed;
     yChange *= turnSpeed;
@@ -62,7 +62,7 @@ void Camera::MouseControl(GLfloat xChange, GLfloat yChange)
     update();
 }
 
-glm::mat4 Camera::CalculateViewMatrix()
+glm::mat4 Camera::calculateViewMatrix()
 {
     return glm::lookAt(position, position + front, up);
 }
