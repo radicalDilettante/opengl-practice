@@ -18,6 +18,8 @@ add_executable(opengl-practice
     Texture.cpp
     Light.h
     Light.cpp
+    Material.h
+    Material.cpp
     stb_image.h
 )
 
