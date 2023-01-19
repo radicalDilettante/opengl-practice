@@ -20,6 +20,11 @@ add_executable(opengl-practice
     Light.cpp
     Material.h
     Material.cpp
+    DirectionalLight.h
+    DirectionalLight.cpp
+    PointLight.h
+    PointLight.cpp
+    CommonValues.h
     stb_image.h
 )
 
