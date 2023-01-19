@@ -27,19 +27,28 @@ add_executable(opengl-practice
     SpotLight.h
     SpotLight.cpp
     CommonValues.h
-    stb_image.h
 )
 
 
+# glfw
 add_subdirectory(external/glfw EXCLUDE_FROM_ALL)
-add_subdirectory(external/glew EXCLUDE_FROM_ALL)
-add_subdirectory(external/glm EXCLUDE_FROM_ALL)
+target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE glfw
-    PRIVATE libglew_static
-    PRIVATE glm
-)
+# glew
+add_definitions(-DGLEW_STATIC)
+add_subdirectory(external/glew EXCLUDE_FROM_ALL)
+target_link_libraries(${PROJECT_NAME} PRIVATE libglew_static)
+
+# glm
+add_subdirectory(external/glm EXCLUDE_FROM_ALL)
+target_link_libraries(${PROJECT_NAME} PRIVATE glm)
+
+# assimp
+add_subdirectory(external/assimp EXCLUDE_FROM_ALL)
+target_link_libraries(${PROJECT_NAME} PRIVATE assimp)
+
+# stb
+include_directories(external/stb)
 
 add_custom_command(
         TARGET ${PROJECT_NAME} PRE_BUILD
