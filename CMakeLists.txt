@@ -26,6 +26,8 @@ add_executable(opengl-practice
     PointLight.cpp
     SpotLight.h
     SpotLight.cpp
+    Model.h
+    Model.cpp
     CommonValues.h
 )
 
