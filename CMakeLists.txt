@@ -31,9 +31,8 @@ add_executable(opengl-practice
     CommonValues.h
 )
 
-
 # glfw
-add_subdirectory(external/glfw EXCLUDE_FROM_ALL)
+find_package(glfw3 REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 
 # glew
